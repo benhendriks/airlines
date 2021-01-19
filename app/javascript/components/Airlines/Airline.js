@@ -53,7 +53,7 @@ const Airline = (props) => {
       </AirlineName>
       <div className="airline-score">{props.attributes.avg_score}</div>
       <LinkWrapper>
-        <Link to={`/ailines/${props.attributes.slug}`}>View Airline</Link>
+        <Link to={`/airlines/${props.attributes.slug}`}>View Airline</Link>
       </LinkWrapper>
     </Card>
   )
