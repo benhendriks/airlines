@@ -68,7 +68,7 @@ const Airline = (props) => {
   const setRating = (score, e) => {
     e.preventDefault()
 
-    debugger
+    setReview({...review, score})
   }
 
   return (
