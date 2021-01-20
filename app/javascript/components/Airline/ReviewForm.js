@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import styled from 'styled-components';
+
+const Wrapper = styled.div``;
+const Field = styled.div``;
+const RatingContainer = styled.div``;
+const Wrapper = styled.div``;
 
 const ReviewForm = (props) => {
+  const ratingOption = [5,4,3,2,1].map((score, index) => {
+    return (
+      <Fragment>
+        <input 
+          type="radio" 
+          value={score} 
+          name="rating" 
+          onChange={() => console.log('selected:', score)} 
+          id={`rating=${score}`} 
+        />
+        <label></label>
+      </Fragment>
+    )
+  })
   return (
     <div className="wrapper">
       <form onSubmit={props.handleSubmit}>
@@ -14,7 +34,7 @@ const ReviewForm = (props) => {
         <div className="field">
           <div className="rating-container">
             <div className="rating-title-text">Rate this Airline</div>
-            [Star rating goes here]
+            {ratingOption} 
           </div>
         </div>
         <button type="submit">Submit Your Review</button>
