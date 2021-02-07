@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 
 const SubmitBtn = styled.button`
   color: #fff;
-  background: #333;
+  background: #1ddb37;
   width: 100%;
   margin-top: 20px;
   border-radius: 4px;
@@ -53,7 +53,7 @@ const SubmitBtn = styled.button`
   transition: ease-in-out 0.1s;
   border: 1px solid #fff;
   &:hover {
-    background: #fff;
+    background: #d3f320;
     color: #000;
     border: 1px solid #fff;
   }
@@ -111,7 +111,7 @@ const ReviewForm = (props) => {
           checked={props.review.score == score}
           name="rating" 
           onChange={() => console.log('selected:', score)} 
-          id={`rating=${score}`} 
+          id={`rating=${score}`}
         />
         <label onClick={props.setRating.bind(this, score)}></label>
       </Fragment>
