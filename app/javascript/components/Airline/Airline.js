@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import styled from 'styled-components'
 import ReviewForm from './ReviewForm';
+import Review from './Review';
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -71,6 +72,18 @@ const Airline = (props) => {
     setReview({...review, score})
   }
 
+  let reviews 
+  if (loaded && airline.included) {
+    reviews = airline.included.map( (item, index) => {
+      return (
+        <Review 
+          key={index}
+          attributes={item.attributes}
+        />
+      )
+    })
+  }
+
   return (
     <Wrapper>
       {
@@ -82,7 +95,7 @@ const Airline = (props) => {
                   attributes={airline.data.attributes}
                   reviews={airline.included}
                 />          
-              <div className="reviews"></div>
+              {reviews}
               </Main>
             </Column>
           <Column>
